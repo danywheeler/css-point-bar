@@ -1,0 +1,180 @@
+/* Copyright 2013-2015 etc Chris Tabor. See https://github.com/christabor/css-progress-wizard/blob/master/LICENSE for details. */
+.point-bar {
+  margin: 0px;
+  padding: 0px;
+  font-size: 80%;
+  list-style: none;
+  margin-bottom: 1em;
+  text-transform: uppercase; }
+
+.point-bar.stepped, .point-bar.block {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex; }
+  .point-bar.stepped > li, .point-bar.block > li {
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+    padding: 0;
+    position: relative;
+    text-align: center;
+    text-overflow: ellipsis;
+    color: #bbb; }
+    .point-bar.stepped > li:hover, .point-bar.block > li:hover {
+      color: #6f6f6f; }
+
+.point-bar.stepped > li, .point-bar.block > li, .point-bar.stacked > li {
+  padding: 0px; }
+  .point-bar.stepped > li .bubble, .point-bar.block > li .bubble, .point-bar.stacked > li .bubble {
+    display: block;
+    position: relative;
+    margin: 0 auto 0.5em; }
+
+.point-bar.one > li .bubble, .point-bar.stacked > li .bubble {
+  width: 20px;
+  height: 20px;
+  background: #bbb;
+  border-bottom: 1px solid #888888; }
+
+.point-bar.one > li.completed, .point-bar.stacked > li.completed {
+  color: #65d074; }
+  .point-bar.one > li.completed:before, .point-bar.stacked > li.completed:before {
+    background: #65d074; }
+  .point-bar.one > li.completed .bubble, .point-bar.stacked > li.completed .bubble {
+    background: #65d074;
+    border-color: #247830; }
+
+.point-bar.one > li.active, .point-bar.stacked > li.active {
+  color: #337AB7; }
+  .point-bar.one > li.active:before, .point-bar.stacked > li.active:before {
+    background: #337AB7; }
+  .point-bar.one > li.active .bubble, .point-bar.stacked > li.active .bubble {
+    background: #337AB7;
+    border-color: #122a3f; }
+
+.point-bar.stepped > li:before {
+  width: 100%;
+  content: '';
+  display: block;
+  position: absolute; }
+
+.point-bar.stepped > li:before {
+  left: 0; }
+
+.point-bar.stepped > li:first-child:before {
+  width: 50%;
+  margin-left: 50%; }
+
+.point-bar.stepped > li:last-child:before {
+  width: 50%;
+  margin-right: 50%; }
+
+.point-bar.stepped > li .bubble {
+  border-radius: 50%; }
+
+.point-bar.one > li:before {
+  height: 3px;
+  background-color: #bbb;
+  top: 9px; }
+
+.point-bar.two > li {
+  color: #969696; }
+
+.point-bar.two > li:before {
+  height: 3px;
+  background-color: #e6e6e6;
+  top: 11px; }
+
+.point-bar.two > li .bubble {
+  width: 20px;
+  height: 20px;
+  background: #eeeeee;
+  border: 2px solid #eeeeee; }
+
+.point-bar.two > li.completed {
+  color: #696969; }
+  .point-bar.two > li.completed .bubble {
+    background: #ffffff;
+    border-color: #ff862e; }
+    .point-bar.two > li.completed .bubble:after {
+      width: 50%;
+      height: 34%;
+      content: '';
+      display: block;
+      -webkit-transform: rotate(-45deg);
+              transform: rotate(-45deg);
+      margin: 19% 0px 0px 20%;
+      border-left: 2px solid #ff862e;
+      border-bottom: 2px solid #ff862e; }
+
+.point-bar.two > li.active {
+  color: #ff862e; }
+  .point-bar.two > li.active .bubble {
+    background: #ffffff;
+    border-color: #ff862e; }
+
+.point-bar.block > li .bubble {
+  width: 99%;
+  height: 12px;
+  border-radius: 2px;
+  background: #bbb;
+  box-shadow: inset -5px 0 12px rgba(0, 0, 0, 0.2);
+  border-bottom: 1px solid #888888; }
+
+.point-bar.block > li.completed {
+  color: #65d074; }
+  .point-bar.block > li.completed .bubble {
+    background: #65d074;
+    border-color: #247830; }
+
+.point-bar.stacked > li {
+  text-indent: -10px;
+  position: relative; }
+  .point-bar.stacked > li:before {
+    left: 50%;
+    height: 100%;
+    content: '';
+    display: block;
+    position: absolute;
+    width: 3px;
+    background-color: #bbb;
+    margin-left: -1.5px; }
+  .point-bar.stacked > li .bubble {
+    border-radius: 50%; }
+  .point-bar.stacked > li .stacked-text {
+    position: relative;
+    z-index: 10;
+    top: 0;
+    margin-left: 60% !important;
+    width: 45% !important;
+    display: inline-block;
+    text-align: left;
+    line-height: 1.2em; }
+
+.point-bar.state > li.danger {
+  color: #d3140f; }
+  .point-bar.state > li.danger:before {
+    background: #d3140f; }
+  .point-bar.state > li.danger .bubble {
+    background: #d3140f;
+    border-color: #440605; }
+
+.point-bar.state > li.warning {
+  color: #edb10a; }
+  .point-bar.state > li.warning:before {
+    background: #edb10a; }
+  .point-bar.state > li.warning .bubble {
+    background: #edb10a;
+    border-color: #5a4304; }
+
+.point-bar.state > li.info {
+  color: #5b32d6; }
+  .point-bar.state > li.info:before {
+    background: #5b32d6; }
+  .point-bar.state > li.info .bubble {
+    background: #5b32d6;
+    border-color: #25135d; }
+
+@media handheld, screen and (max-width: 400px) {
+  .point-bar {
+    font-size: 60%; } }

@@ -1,0 +1,15 @@
+{
+  "name": "css-point-bar",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/danywheeler/css-point-bar.git"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-autoprefixer": "^3.1.0",
+    "gulp-compress": "0.0.8",
+    "gulp-concat": "^2.6.0",
+    "gulp-sass": "^2.1.0"
+  }
+}
